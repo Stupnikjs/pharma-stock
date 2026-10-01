@@ -1,0 +1,10 @@
+[package]
+name = "pharma_stock"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+rusqlite = { version = "0.31", features = ["bundled"] }
+sha2 = "0.10"
+zstd = "0.13"
