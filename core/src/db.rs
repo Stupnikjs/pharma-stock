@@ -78,6 +78,22 @@ CREATE TABLE IF NOT EXISTS bdpm_gener(
     PRIMARY KEY(groupe_id, cis)
 ) WITHOUT ROWID;
 CREATE INDEX IF NOT EXISTS idx_gener_cis ON bdpm_gener(cis);
+CREATE TABLE IF NOT EXISTS bdpm_cip(
+    cip13                  TEXT PRIMARY KEY,
+    cip7                   TEXT NOT NULL,
+    cis                    TEXT NOT NULL,
+    libelle_presentation   TEXT NOT NULL,
+    statut_presentation    TEXT NOT NULL,
+    etat_commercialisation TEXT NOT NULL,
+    date_declaration       TEXT,
+    agrement_collectivites INTEGER NOT NULL,
+    taux_remb              INTEGER,
+    prix_c                 INTEGER,
+    prix_hono_c            INTEGER,
+    honoraires_c           INTEGER,
+    indications_remb       TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_cip_cis ON bdpm_cip(cis);
 CREATE TABLE IF NOT EXISTS bdpm_rejects(
     source TEXT NOT NULL,
     line   INTEGER NOT NULL,
